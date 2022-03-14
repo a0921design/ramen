@@ -1,0 +1,644 @@
+@charset "utf-8";
+
+/*基本設定*/
+
+body {
+  background-color: #ffffff;
+  color: #111111;
+  font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2;
+  margin-left: 8px;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+/*メニューバー*/
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: sticky;
+  z-index: 8;
+  top: 0;
+  height: 50px;
+}
+
+/*メニュー本体*/
+
+.nav_list {
+  display: flex;
+  height: 50px;
+  width: 100vw;
+  position: fixed;
+  background-image: url(../img/bg_menu.jpg);
+  top: -50px;
+  left: 0;
+  z-index: 9;
+  transition: .7s;
+}
+
+.nav_list ul {
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.nav_list li {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111111;
+}
+
+/*メニュー表示時の背景オーバーレイ*/
+
+.overray {
+  height: 100%;
+  width: 100vw;
+  position: fixed;
+  background-color: #111111;
+  opacity: 0.5;
+  top: -100%;
+  left: 0;
+  z-index: 8;
+  transition: .3s;
+}
+
+/*開閉ボタン*/
+
+#menu_line {
+  height: 36px;
+  width: 40px;
+  position: sticky;
+  cursor: pointer;
+  z-index: 11;
+  transition: .7s;
+  margin-right: 20px;
+}
+
+.line {
+  display: block;
+  position: absolute;
+  width: 36px;
+  height: 2px;
+  background-color: #111111;
+  transition: .7s;
+  border-radius: 6px;
+  right: 0;
+}
+
+#line1 {
+  top: 30%;
+}
+
+#line2 {
+  bottom: 30%;
+}
+
+.in {
+  transform: translateY(100%);
+}
+
+.line1, .line2 {
+  background: #111111;
+}
+
+.line1 {
+  transform: translateY(6px) rotate(45deg);
+  top: 0;
+}
+
+.line2 {
+  transform: translateY(-6px) rotate(-45deg);
+  bottom: 0;
+}
+
+/*ヒーローヘッダー*/
+
+.hero {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  margin-bottom: -50px;
+}
+
+.hero .logo {
+  margin: -50px 0 0 25%;
+  width: 50%;
+  text-align: center;
+}
+
+.hero .logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hero .copy {
+  margin-top: -50px;
+  width: 25%;
+}
+
+.hero .copy img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hero .bg_img {
+  background-image: url(../img/bg_index.jpg);
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+
+/*ヘッダー*/
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 450px;
+  width: 80%;
+  margin: -50px auto 0 auto;
+}
+
+.header .logo {
+  margin-right: 20px;
+}
+
+.header .logo img, .title img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.header .bg_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 450px;
+  width: 100%;
+}
+
+#about .header .bg_img {
+  background-image: url(../img/header_about.jpg);
+  background-size: cover;
+}
+
+#kodawari .header .bg_img {
+  background-image: url(../img/header_kodawari.jpg);
+  background-size: cover;
+}
+
+#access .header .bg_img {
+  background-image: url(../img/header_access.jpg);
+  background-size: cover;
+}
+
+#recruit .header .bg_img {
+  background-image: url(../img/header_recruit.jpg);
+  background-size: cover;
+}
+
+#contact .header {
+  height: 150px;
+}
+
+#contact .header .bg_img {
+  background-color: #999999;
+  height: 150px;
+}
+
+/*メインコンテンツ*/
+
+.main {
+  position: relative;
+}
+
+section {
+  width: 80%;
+  margin: 40px auto 0 auto;
+}
+
+section:last-of-type {
+  margin-bottom: 40px;
+}
+
+/*見出しの装飾*/
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  padding-bottom: 2px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ff9e3e;
+  margin-left: 8px;
+  padding: 4px 0;
+  border-bottom: 1px solid #ff9e3e;
+}
+
+/*news,accessリスト部分*/
+
+.news ul,.map ul {
+  margin: 10px 0 0 8px;
+}
+
+.news li,.map li {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2;
+}
+
+/*indexメインコンテンツ*/
+
+#index .main {
+  display: flex;
+  height: 100%;
+  width: 80%;
+  margin: 0 auto 40px auto;
+}
+
+.top {
+  width: 40%;
+}
+
+.top section {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.link {
+  width: 50%;
+  margin: 40px 0 0 10%;
+  display: flex;
+}
+
+.link ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.link ul li img {
+  width: 100%;
+  height: auto;
+}
+
+.link ul li:first-of-type {
+  margin-bottom: 40px;
+}
+
+/*こだわりレイアウト*/
+
+#kodawari .main {
+  background-image: url(../img/bg_kodawari.jpg);
+  background-size: cover;
+}
+
+#kodawari section:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 40px;
+}
+
+/*店舗情報レイアウト*/
+
+.map {
+  display: flex;
+  width: 80%;
+  margin: 0 auto 40px auto;
+}
+
+.map section {
+  width: 100%;
+}
+
+.googlemap {
+  display: block;
+  margin-left: 40px;
+}
+
+/*求人情報テーブル*/
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table:first-of-type {
+  margin: 40px 0;
+}
+
+th {
+  width: 30%;
+  padding: 20px 0 20px 8px;
+  background-color: #ff9e3e;
+  color: #ffffff;
+  border: 1px solid #dd6c0c;
+}
+
+td {
+  width: 70%;
+  padding: 20px 0 20px 12px;
+  border: 1px solid #ff9e3e;
+  line-height: 2.0;
+}
+
+/*お問い合わせフォーム*/
+
+/*見出しの装飾*/
+
+#contact h2 span {
+  background-color: #111111;
+  padding: 4px 8px;
+}
+
+/*フォーム本体*/
+
+.form {
+  background-color: #dddddd;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.form_area {
+  display: flex;
+  padding-top: 40px;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.text {
+  flex-direction: column;
+}
+
+.text p {
+  margin-bottom: 20px;
+}
+
+input {
+  background-color: #ffffff;
+  width: 16em;
+  padding: 4px;
+}
+
+textarea {
+  background-color: #ffffff;
+  padding: 4px;
+}
+
+button {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+button:hover {
+  color: #111111;
+}
+
+.btn {
+  background-color: #111111;
+  color: ffffff;
+  padding: 10px 20px;
+}
+
+.btn:hover {
+  background-color: #ffffff;
+  color: #111111;
+}
+
+/*フッター*/
+
+.footer {
+  height: 250px;
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.footer_wrap {
+  display: flex;
+  height: 200px;
+  width: 80%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.footer_wrap h3 {
+  border: none;
+}
+
+.footer_wrap h3 img {
+  max-width: 100%;
+}
+
+.footer_wrap li {
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.copyright {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+/*レイアウト切り替え*/
+
+@media screen and (max-width:1024px) {
+
+  /*文字サイズ*/
+
+  p {
+    font-size: 14px;
+  }
+
+  /*メニュー本体*/
+
+  .nav_list {
+    height: 100%;
+    top: -100%;
+    left: 0;
+  }
+  
+  .nav_list ul {
+    width: 100vw;
+    flex-direction: column;
+  }
+  
+  .nav_list li {
+    font-size: 24px;
+  }
+  
+  /*メニュー表示時の背景オーバーレイ非表示*/
+  
+  .overray {
+    display: none;
+  }
+
+  /*ヒーローヘッダー*/
+
+  .hero {
+    height: 560px;
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .hero .logo {
+    margin-left: 15%;
+    width: 70%;
+  }
+  
+  .hero .copy {
+    width: 15%;
+  }
+
+  .hero .bg_img {
+    height: 560px;
+  }
+
+  /*ヘッダー*/
+
+  .header {
+    width: 90%;
+    height: 250px;
+  }
+
+  .header .bg_img {
+    height: 250px;
+  }
+
+  #contact .header {
+    height: 100px;
+  }
+  
+  #contact .header .bg_img {
+    height: 100px;
+  }
+
+  #contact .header .logo img, .title img {
+    max-height: 80px;
+  }
+
+  /*メインコンテンツ*/
+
+  section {
+    width: 90%;
+  }
+  
+  /*見出しの装飾*/
+  
+  h2 {
+    font-size: 20px;
+  }
+
+  h2 img {
+    max-width: 100%;
+  }
+  
+  /*リスト文字サイズ*/
+
+  .news li,.map li {
+    font-size: 14px;
+  }
+  
+  /*indexメインコンテンツ*/
+  
+  #index .main {
+    flex-direction: column;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .top {
+    width: 100%;
+  }
+  
+  .link {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .link ul {
+    margin: 40px 0;
+  }
+
+  /*店舗情報レイアウト*/
+
+  .map {
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto 40px auto;
+  }
+  
+  .map section {
+    width: 100%;
+  }
+  
+  .googlemap {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /*フォーム本体*/
+  
+  .form_area {
+    flex-direction: column;
+  }
+
+  .button {
+    flex-direction: row;
+  }
+  
+  /*フッター*/
+  
+  .footer {
+    height: 300px;
+  }
+  
+  .footer_wrap {
+    height: 200px;
+    width: 90%;
+  }
+
+  .footer_wrap h3 {
+    width: 60%;
+  }
+  
+  .footer_wrap ul {
+    width: 40%;
+  }
+  
+  .copyright {
+    height: 100px;
+  }
+  
+}
